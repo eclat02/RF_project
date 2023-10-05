@@ -14,7 +14,7 @@ RF_project contains the set of test cases for data quality checks in tables:
 - Dependents
   
 
-```test.robot``` is the main file which stores the set of test cases using Robot Framework
+```test.robot``` is the main file which stores the set of test cases using Robot Framework. 
 ```Reports``` folder stores the results of test cases execution. Reports are generated and can be reviewed in ```report.html``` file.
 
 ## Preconditions
