@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.8 on win32)" generated="20231005 20:08:28.811" rpa="false" schemaversion="4">
+<suite id="s1" name="Test" source="C:\Users\Dzmitry_Maldavanau\PycharmProjects\pythonProjectpytest\test.robot">
+<kw name="Connect To Database Using Custom Params" library="DatabaseLibrary" type="SETUP">
+<arg>pyodbc</arg>
+<arg>${string}</arg>
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to
+connect to the database using the map string `db_connect_string`
+(parsed as a list of named arguments).</doc>
+<msg timestamp="20231005 20:08:28.851" level="INFO">Executing : Connect To Database Using Custom Params : pyodbc.connect(db_api_2.connect("Driver={SQL Server Native Client 11.0};Server={EPBYMINW1762\SQLEXPRESS};UID=testuser;PWD=***) </msg>
+<status status="PASS" starttime="20231005 20:08:28.851" endtime="20231005 20:08:28.899"/>
+</kw>
+<test id="s1-t1" name="Jobs: job_id cannot be NULL" line="16">
+<kw name="Row Count Is 0" library="DatabaseLibrary">
+<arg>select * from hr.jobs where job_id is NULL</arg>
+<doc>Check if any rows are returned from the submitted `selectStatement`. If there are, then this will throw an
+AssertionError. Set optional input `sansTran` to True to run command without an explicit transaction commit or
+rollback. The default error message can be overridden with the `msg` argument.</doc>
+<msg timestamp="20231005 20:08:28.900" level="INFO">Executing : Row Count Is 0  |  selectStatement</msg>
+<msg timestamp="20231005 20:08:28.900" level="INFO">Executing : Row Count  |  select * from hr.jobs where job_id is NULL </msg>
+<status status="PASS" starttime="20231005 20:08:28.900" endtime="20231005 20:08:28.901"/>
+</kw>
+<status status="PASS" starttime="20231005 20:08:28.900" endtime="20231005 20:08:28.902"/>
+</test>
+<test id="s1-t2" name="Employees: email length cannot exceed 50 symbols" line="25">
+<kw name="Row Count Is 0" library="DatabaseLibrary">
+<arg>select * from hr.employees where len(email) &gt; 50</arg>
+<doc>Check if any rows are returned from the submitted `selectStatement`. If there are, then this will throw an
+AssertionError. Set optional input `sansTran` to True to run command without an explicit transaction commit or
+rollback. The default error message can be overridden with the `msg` argument.</doc>
+<msg timestamp="20231005 20:08:28.905" level="INFO">Executing : Row Count Is 0  |  selectStatement</msg>
+<msg timestamp="20231005 20:08:28.905" level="INFO">Executing : Row Count  |  select * from hr.employees where len(email) &gt; 50 </msg>
+<status status="PASS" starttime="20231005 20:08:28.905" endtime="20231005 20:08:28.906"/>
+</kw>
+<status status="PASS" starttime="20231005 20:08:28.904" endtime="20231005 20:08:28.906"/>
+</test>
+<test id="s1-t3" name="Regions: 4 records are expected to be in the table" line="35">
+<kw name="Row Count Is Equal To X" library="DatabaseLibrary">
+<arg>select * from hr.regions</arg>
+<arg>4</arg>
+<doc>Check if the number of rows returned from `selectStatement` is equal to the value submitted. If not, then this
+will throw an AssertionError. Set optional input `sansTran` to True to run command without an explicit
+transaction commit or rollback. The default error message can be overridden with the `msg` argument.</doc>
+<msg timestamp="20231005 20:08:28.908" level="INFO">Executing : Row Count Is Equal To X  |  select * from hr.regions  |  4</msg>
+<msg timestamp="20231005 20:08:28.908" level="INFO">Executing : Row Count  |  select * from hr.regions </msg>
+<status status="PASS" starttime="20231005 20:08:28.908" endtime="20231005 20:08:28.910"/>
+</kw>
+<status status="PASS" starttime="20231005 20:08:28.908" endtime="20231005 20:08:28.910"/>
+</test>
+<test id="s1-t4" name="Locations: US postal code should consist of 5 or 9(5-4) digits" line="44">
+<kw name="Row Count Is 0" library="DatabaseLibrary">
+<arg>select * from hr.locations except (select * from hr.locations where postal_code like '[0-9][0-9][0-9][0-9][0-9]%' union select * from hr.locations where postal_code like '[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]%')</arg>
+<doc>Check if any rows are returned from the submitted `selectStatement`. If there are, then this will throw an
+AssertionError. Set optional input `sansTran` to True to run command without an explicit transaction commit or
+rollback. The default error message can be overridden with the `msg` argument.</doc>
+<msg timestamp="20231005 20:08:28.912" level="INFO">Executing : Row Count Is 0  |  selectStatement</msg>
+<msg timestamp="20231005 20:08:28.912" level="INFO">Executing : Row Count  |  select * from hr.locations except (select * from hr.locations where postal_code like '[0-9][0-9][0-9][0-9][0-9]%' union select * from hr.locations where postal_code like '[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]%') </msg>
+<msg timestamp="20231005 20:08:28.917" level="FAIL">Expected 0 rows, but 3 were returned from: 'select * from hr.locations except (select * from hr.locations where postal_code like '[0-9][0-9][0-9][0-9][0-9]%' union select * from hr.locations where postal_code like '[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]%')'</msg>
+<status status="FAIL" starttime="20231005 20:08:28.912" endtime="20231005 20:08:28.917"/>
+</kw>
+<status status="FAIL" starttime="20231005 20:08:28.912" endtime="20231005 20:08:28.918">Expected 0 rows, but 3 were returned from: 'select * from hr.locations except (select * from hr.locations where postal_code like '[0-9][0-9][0-9][0-9][0-9]%' union select * from hr.locations where postal_code like '[0-9][0-9][0-9][0-9][0-9]-[0-9][0-9][0-9][0-9]%')'</status>
+</test>
+<test id="s1-t5" name="Countries: country_id should contain only from 2 letters" line="54">
+<kw name="Row Count Is 0" library="DatabaseLibrary">
+<arg>select * from hr.countries where country_id not like '[A-Z][A-Z]'</arg>
+<doc>Check if any rows are returned from the submitted `selectStatement`. If there are, then this will throw an
+AssertionError. Set optional input `sansTran` to True to run command without an explicit transaction commit or
+rollback. The default error message can be overridden with the `msg` argument.</doc>
+<msg timestamp="20231005 20:08:28.920" level="INFO">Executing : Row Count Is 0  |  selectStatement</msg>
+<msg timestamp="20231005 20:08:28.920" level="INFO">Executing : Row Count  |  select * from hr.countries where country_id not like '[A-Z][A-Z]' </msg>
+<status status="PASS" starttime="20231005 20:08:28.920" endtime="20231005 20:08:28.922"/>
+</kw>
+<status status="PASS" starttime="20231005 20:08:28.919" endtime="20231005 20:08:28.923"/>
+</test>
+<test id="s1-t6" name="Dependents: the only values in relationship column is 'Child'" line="64">
+<kw name="Row Count Is 0" library="DatabaseLibrary">
+<arg>select distinct relationship from hr.dependents where relationship not in ('Child')</arg>
+<doc>Check if any rows are returned from the submitted `selectStatement`. If there are, then this will throw an
+AssertionError. Set optional input `sansTran` to True to run command without an explicit transaction commit or
+rollback. The default error message can be overridden with the `msg` argument.</doc>
+<msg timestamp="20231005 20:08:28.925" level="INFO">Executing : Row Count Is 0  |  selectStatement</msg>
+<msg timestamp="20231005 20:08:28.925" level="INFO">Executing : Row Count  |  select distinct relationship from hr.dependents where relationship not in ('Child') </msg>
+<status status="PASS" starttime="20231005 20:08:28.924" endtime="20231005 20:08:28.926"/>
+</kw>
+<status status="PASS" starttime="20231005 20:08:28.924" endtime="20231005 20:08:28.926"/>
+</test>
+<kw name="Disconnect From Database" library="DatabaseLibrary" type="TEARDOWN">
+<doc>Disconnects from the database.
+By default it's not an error if there was no open database connection -
+suitable for usage as a teardown.
+However you can enforce it using the `error_if_no_connection` parameter.</doc>
+<msg timestamp="20231005 20:08:28.928" level="INFO">Executing : Disconnect From Database</msg>
+<status status="PASS" starttime="20231005 20:08:28.928" endtime="20231005 20:08:28.928"/>
+</kw>
+<doc>A test suite (6 test cases) for Data Quality testing of the tables from the database TRN</doc>
+<status status="FAIL" starttime="20231005 20:08:28.813" endtime="20231005 20:08:28.928"/>
+</suite>
+<statistics>
+<total>
+<stat pass="5" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="5" fail="1" skip="0" id="s1" name="Test">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
