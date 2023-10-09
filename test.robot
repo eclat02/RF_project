@@ -60,6 +60,7 @@ Countries: country_id should contain only from 2 letters
     Row Count Is 0  select * from hr.countries where country_id not like '[A-Z][A-Z]'
     Log To Console    all country_id have the valid format
 
+
 Dependents: the only values in relationship column is 'Child'
     [Tags]  AUTOTEST-006
     [Documentation]
@@ -67,7 +68,6 @@ Dependents: the only values in relationship column is 'Child'
     ...  |0. Connect to the database TRN
     ...  |1. Execute the query: select distinct values from table Dependents except 'Child'
     ...  |Expected result: 0 records are displayed, status: pass
-
     ${output}=  Execute SQL String  select distinct relationship from hr.dependents where relationship not in ('Child')
     Log  ${output}
     Should Be Equal As Strings  ${output}  None
