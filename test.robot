@@ -5,7 +5,7 @@ Library  DatabaseLibrary
 Library  OperatingSystem
 Library  Collections
 # add your parameters here to connect to the DB
-Suite Setup  Connect To Database Using Custom Params  pymssql  database='TRN', user='username', password='password', host="hostname", server="servername", port=1433
+Suite Setup  Connect To Database Using Custom Params  pymssql  database='TRN', user='testuser', password='test123', host="EPBYMINW1762", server="SQLEXPRESS", port=1433
 Suite Teardown  Disconnect From Database
 
 *** Test Cases ***

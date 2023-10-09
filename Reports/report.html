@@ -1629,22 +1629,22 @@ storage = function () {
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,4,[],[0,0,115],[],[[5,0,0,[],[1,87,2],[]],[6,0,0,[],[1,91,2],[]],[7,0,0,[],[1,95,2],[]],[8,0,0,[],[0,99,6,9],[]],[10,0,0,[],[1,106,4],[]],[11,0,0,[],[1,111,2],[]]],[],[6,5,1,0]];
+window.output["suite"] = [1,2,3,4,[],[0,0,132],[],[[5,0,6,[7],[1,81,4],[]],[8,0,9,[10],[1,87,18],[]],[11,0,12,[13],[1,106,3],[]],[14,0,15,[16],[0,111,7,17],[]],[18,0,19,[20],[1,120,4],[]],[21,0,22,[23],[1,126,4],[]]],[],[6,5,1,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Test","*C:\\Users\\Dzmitry_Maldavanau\\PycharmProjects\\pythonProjectpytest\\test.robot","*../test.robot","*<p>A test suite (6 test cases) for Data Quality testing of the tables from the database TRN\x3c/p>","*Jobs: job_id cannot be NULL","*Employees: email length cannot exceed 50 symbols","*Regions: 4 records are expected to be in the table","*Locations: US postal code should consist of 5 or 9(5-4) digits","eNqtjcEKwjAYg18lF6mKk4EnvfsUIjK7yIa1//j7l+7xrZ6HJy+BkC/JeZ7ojT1aqJS0wz0bDihUQmlZY80eKq8TXGKoLLZfj0H3QXxno8QEzp6TYf0DKcNnc5JkXbh56YkwPgl3aZvjdUlWDjnWKv452iw/bdwbAv1WWg==","*Countries: country_id should contain only from 2 letters","*Dependents: the only values in relationship column is 'Child'"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Test","*C:\\Users\\Dzmitry_Maldavanau\\PycharmProjects\\RF_project\\test.robot","*../test.robot","*<p>A test suite (6 test cases) for Data Quality testing of the tables from the database TRN\x3c/p>","*Employees: the table should have at least 1 employee with empty manager_id","*<p>|Steps: |0. Connect to the database TRN |1. Execute the query: select records from table Employees where manager is NULL |Expected result: 0 records are displayed, status: pass\x3c/p>","*AUTOTEST-001","*Dependents: the table should present in the database","*<p>|Steps: |0. Connect to the database TRN |1. Execute the query: select records from system info table where table name is 'dependents' |Expected result: dependents table is present, status: pass\x3c/p>","*AUTOTEST-002","*Regions: 4 records are expected to be in the table","*<p>|Steps: |0. Connect to the database TRN |1. Execute the query: select records from table Regions |Expected result: 4 records are displayed, status: pass\x3c/p>","*AUTOTEST-003","*Locations: US postal code should consist of 5 or 9(5-4) digits","*<p>|Steps: |0. Connect to the database TRN |1. Execute the query: select records from table Locations where postal code doesn't meet formats: 5 digits or 9 digits(5-4) |Expected result: 0 records are displayed, status: pass\x3c/p>","*AUTOTEST-004","eNqtjcEKwjAYg18lF6mKk4EnvfsUIjK7yIa1//j7l+7xrZ6HJy+BkC/JeZ7ojT1aqJS0wz0bDihUQmlZY80eKq8TXGKoLLZfj0H3QXxno8QEzp6TYf0DKcNnc5JkXbh56YkwPgl3aZvjdUlWDjnWKv452iw/bdwbAv1WWg==","*Countries: country_id should contain only from 2 letters","*<p>|Steps: |0. Connect to the database TRN |1. Execute the query: select records from table Countries where country_id doesn't consist of 2 letters |Expected result: 0 records are displayed, status: pass\x3c/p>","*AUTOTEST-005","*Dependents: the only values in relationship column is 'Child'","*<p>|Steps: |0. Connect to the database TRN |1. Execute the query: select distinct values from table Dependents except 'Child' |Expected result: 0 records are displayed, status: pass\x3c/p>","*AUTOTEST-006"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:00","fail":1,"label":"All Tests","pass":5,"skip":0}],[],[{"elapsed":"00:00:00","fail":1,"id":"s1","label":"Test","name":"Test","pass":5,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:00:00","fail":1,"label":"All Tests","pass":5,"skip":0}],[{"elapsed":"00:00:00","fail":0,"label":"AUTOTEST-001","pass":1,"skip":0},{"elapsed":"00:00:00","fail":0,"label":"AUTOTEST-002","pass":1,"skip":0},{"elapsed":"00:00:00","fail":0,"label":"AUTOTEST-003","pass":1,"skip":0},{"elapsed":"00:00:00","fail":1,"label":"AUTOTEST-004","pass":0,"skip":0},{"elapsed":"00:00:00","fail":0,"label":"AUTOTEST-005","pass":1,"skip":0},{"elapsed":"00:00:00","fail":0,"label":"AUTOTEST-006","pass":1,"skip":0}],[{"elapsed":"00:00:00","fail":1,"id":"s1","label":"Test","name":"Test","pass":5,"skip":0}]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1696529308813;
+window.output["baseMillis"] = 1696858312769;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 122;
+window.output["generated"] = 139;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
